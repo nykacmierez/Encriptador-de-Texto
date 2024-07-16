@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador de Textos</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav_barra">
+        <div class="nav_contenedor">
+          <a class="nav_logo" href="index.html">
+            <img class="img_logo" src="/assest/Logo.png" alt="logo_AluraLatam" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="titulo">Encriptador</h1>
+      <section class="seccion_principal">
+        <div class="contenedor_izq">
+          <h2 class="subtitulo">"Codigo Secreto"</h2>
+          <textarea
+            style="resize: none"
+            name="textarea_code"
+            id="msg_entrada"
+            onkeyup="document.getElementById(this.id).value = document.getElementById(this.id).value.toLowerCase()"
+            placeholder="Solo letras de A a Z y espacios"
+          ></textarea> <!--toma el valor del text-area y lo convierte a minusculas-->
+          <div class="div_btns">
+            <input type="button" class="btn" id="btn_encript" value="ENCRIPTAR" onclick="encriptar()"/>
+            <input type="button" class="btn" id="btn_descript" value="DESENCRIPTAR" onclick="desencriptar()"/>
+          </div>
+        </div>
+        
+        <div class="contenedor_der">
+          <h2 class="subtitulo">
+            <div class="loader"></div>
+          </h2>
+          <textarea style="resize: none;" readonly name="textarea_decode" id="msg_salida"></textarea>
+          <div class="div_btns">
+            <input type="button" class="btn" id="btn_copiar" value="COPIAR" onclick="copiarTexto()">
+            <input type="button" class="btn" id="btn_limpiar" value="LIMPIAR" onclick="limparTexto()">
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <p>Desarrollado por Lucas Mierez</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
