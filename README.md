@@ -1,125 +1,69 @@
-Documentación para el Script de Encriptación y Desencriptación
-Este script contiene funciones para encriptar y desencriptar texto, copiar texto al portapapeles, limpiar campos de texto, y validar la entrada del usuario. A continuación se detalla la funcionalidad de cada función.
+# Documentación del Proyecto: Encriptador de Textos
 
-function encriptar()
-Convierte el texto del textarea de entrada (msg_entrada) a una versión encriptada según las siguientes reglas:
+## Descripción del Proyecto
 
-La letra "e" se convierte en "enter".
-La letra "i" se convierte en "imes".
-La letra "a" se convierte en "ai".
-La letra "o" se convierte en "ober".
-La letra "u" se convierte en "ufat".
-El resultado encriptado se muestra en el textarea de salida (msg_salida).
+El "Encriptador de Textos" es una aplicación web que permite a los usuarios encriptar y desencriptar mensajes utilizando un conjunto específico de reglas. La aplicación también proporciona funciones para copiar el texto encriptado y limpiar los campos de entrada y salida. Esta herramienta es útil para aprender y practicar técnicas básicas de encriptación y desencriptación.
 
-Uso:
+## Tecnologías Utilizadas
 
-javascript
-Copiar código
-encriptar();
-function desencriptar()
-Convierte el texto del textarea de entrada (msg_entrada) de vuelta a su versión original según las siguientes reglas:
+- **HTML**: Estructura y contenido de la página.
+- **CSS**: Estilos y diseño de la página.
+- **JavaScript**: Lógica para encriptar, desencriptar, copiar y limpiar texto.
+- **AOS (Animate On Scroll)**: Biblioteca para animaciones de desplazamiento.
+- **SweetAlert2**: Biblioteca para mostrar alertas modales y notificaciones.
 
-La cadena "enter" se convierte en "e".
-La cadena "imes" se convierte en "i".
-La cadena "ai" se convierte en "a".
-La cadena "ober" se convierte en "o".
-La cadena "ufat" se convierte en "u".
-El resultado desencriptado se muestra en el textarea de salida (msg_salida).
+## Estructura del Proyecto
 
-Uso:
+### Archivos Principales
 
-javascript
-Copiar código
-desencriptar();
-function copiarTexto()
-Copia el contenido del textarea de salida (msg_salida) al portapapeles utilizando la API document.execCommand("copy") y muestra una alerta de éxito utilizando SweetAlert2.
+1. **`index.html`**: Archivo principal que define la estructura de la página web.
+2. **`styles/reset.css`**: CSS para restablecer los estilos predeterminados del navegador.
+3. **`styles/style.css`**: CSS personalizado para el diseño y estilo de la aplicación.
+4. **`script.js`**: Archivo JavaScript que contiene la lógica para encriptar, desencriptar, copiar y limpiar el texto.
 
-Uso:
+### Estructura del HTML
 
-javascript
-Copiar código
-copiarTexto();
-function limpiarTexto()
-Limpia el contenido de los textarea de entrada (msg_entrada) y salida (msg_salida). Llama a la función validarEntrada para actualizar la visibilidad del botón "DESENCRIPTAR".
+- **`<header>`**: Contiene la barra de navegación con el logo.
+- **`<main>`**: Contiene el área principal de la aplicación con los campos de entrada y salida de texto, botones para encriptar, desencriptar, copiar y limpiar.
+- **`<footer>`**: Información del desarrollador y enlaces a redes sociales.
 
-Uso:
+### Funciones JavaScript
 
-javascript
-Copiar código
-limpiarTexto();
-function validarEntrada()
-Valida el contenido del textarea de entrada (msg_entrada) para asegurarse de que solo contiene letras minúsculas y espacios. Si el campo está vacío, oculta el botón "DESENCRIPTAR"; de lo contrario, lo muestra.
+- **`encriptar()`**: Reemplaza caracteres específicos en el texto de entrada con sus correspondientes encriptados.
+- **`desencriptar()`**: Reemplaza las cadenas encriptadas en el texto de entrada con los caracteres originales.
+- **`copiarTexto()`**: Copia el texto encriptado al portapapeles y muestra una notificación de éxito o error.
+- **`limpiarTexto()`**: Limpia los campos de entrada y salida de texto y muestra una notificación de éxito.
+- **`validarEntrada()`**: Habilita o deshabilita el botón de desencriptar basado en la presencia de texto en el área de entrada.
 
-Uso:
+### CSS
 
-javascript
-Copiar código
-validarEntrada();
-document.addEventListener("DOMContentLoaded", validarEntrada)
-Llama a la función validarEntrada cuando el documento ha terminado de cargarse, para inicializar la visibilidad del botón "DESENCRIPTAR".
+- **`reset.css`**: Incluye un conjunto básico de reglas para asegurar que los estilos se vean uniformes en diferentes navegadores.
+- **`style.css`**: Contiene estilos específicos para la página, incluyendo el diseño de los botones, áreas de texto y animaciones.
 
-Uso:
+### Animaciones
 
-javascript
-Copiar código
-document.addEventListener("DOMContentLoaded", validarEntrada);
-Código Completo del Script (script.js)
-javascript
-Copiar código
-function encriptar() {
-  const input = document.getElementById("msg_entrada").value;
-  const output = input
-    .replace(/e/g, "enter")
-    .replace(/i/g, "imes")
-    .replace(/a/g, "ai")
-    .replace(/o/g, "ober")
-    .replace(/u/g, "ufat");
-  document.getElementById("msg_salida").value = output;
-}
+- **AOS**: Se utiliza para agregar animaciones al desplazar la página, mejorando la experiencia visual.
 
-function desencriptar() {
-  const input = document.getElementById("msg_entrada").value;
-  const output = input
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ober/g, "o")
-    .replace(/ufat/g, "u");
-  document.getElementById("msg_salida").value = output;
-}
+## Instalación y Uso
 
-function copiarTexto() {
-  const text = document.getElementById("msg_salida");
-  text.select();
-  document.execCommand("copy");
-  Swal.fire({
-    icon: 'success',
-    title: 'Texto copiado',
-    showConfirmButton: false,
-    timer: 1500
-  });
-}
+1. **Clonar el Repositorio**: 
+   
+   git clone <https://github.com/nykacmierez/Encriptador-de-Texto.git>
 
-function limpiarTexto() {
-  document.getElementById("msg_entrada").value = "";
-  document.getElementById("msg_salida").value = "";
-  validarEntrada();
-}
+2. **Abrir index.html:** 
+    Abre el archivo index.html en tu navegador web para ver la aplicación en funcionamiento.
 
-function validarEntrada() {
-  const textarea = document.getElementById("msg_entrada");
-  
-  const btnDescript = document.getElementById("btn_descript");
-  const msgSalida = document.getElementById("msg_salida");
+3. **Requisitos:**
+  Asegúrate de tener una conexión a Internet para cargar las bibliotecas externas (Google Fonts, AOS, SweetAlert2).
 
-  if (textarea.value.trim() === "") {
-    btnDescript.classList.add("hidden");
-    msgSalida.value = ""; // Limpiar el textarea de salida
-  } else {
-    btnDescript.classList.remove("hidden");
-  }
-}
+## Contribuciones
+  Las contribuciones al proyecto son bienvenidas. Sigue las siguientes instrucciones para contribuir:
+  - 1. *Fork* del repositorio.
+  - 2. *Crea* una nueva rama para tu caracteristica o correccion de errores.
+  - 3. Haz *commit* de tus cambios y realiza un *Pull Request*
 
-// Inicializa la visibilidad del botón cuando se carga la página
-document.addEventListener("DOMContentLoaded", validarEntrada);
-Este script es ideal para una aplicación de encriptación de texto simple en un entorno de navegador web. Asegúrate de que SweetAlert2 esté correctamente enlazado en tu proyecto para que las alertas funcionen correctamente.
+## Licencia
+  Todos los derechos reservados.
+
+## Contacto
+  Desarrollado por [Lucas Mierez](mailto:lukassmierez@gmail.com). Puedes encontrarme en [GitHub](https://github.com/nykacmierez) y [LinkedIn](https://www.linkedin.com/in/lucas-mierez-871249283/).
