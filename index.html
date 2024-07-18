@@ -6,6 +6,10 @@
     <title>Encriptador de Textos</title>
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body>
@@ -22,38 +26,50 @@
     <main>
       <h1 class="titulo">Encriptador</h1>
       <section class="seccion_principal">
-        <div class="contenedor_izq">
+        <div 
+          class="contenedor_izq"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500">                
           <h2 class="subtitulo">"Codigo Secreto"</h2>
           <textarea
+            autofocus
             style="resize: none"
             name="textarea_code"
             id="msg_entrada"
             onkeyup="document.getElementById(this.id).value = document.getElementById(this.id).value.toLowerCase()"
-            placeholder="Solo letras de A a Z y espacios"
-          ></textarea> <!--toma el valor del text-area y lo convierte a minusculas-->
+            placeholder="Solo letras de A a Z y espacios"   
+            oninput="validarEntrada()"       
+          ></textarea>
           <div class="div_btns">
-            <input type="button" class="btn" id="btn_encript" value="ENCRIPTAR" onclick="encriptar()"/>
-            <input type="button" class="btn" id="btn_descript" value="DESENCRIPTAR" onclick="desencriptar()"/>
+            <input type="button" class="btn" id="btn_encript" value="ENCRIPTAR" onclick="encriptar()" />            
+            <input type="button" class="btn hidden" id="btn_descript" value="DESENCRIPTAR" onclick="desencriptar()"/>
           </div>
         </div>
         
-        <div class="contenedor_der">
+        <div class="contenedor_der" data-aos="fade-left">
           <h2 class="subtitulo">
             <div class="loader"></div>
           </h2>
           <textarea style="resize: none;" readonly name="textarea_decode" id="msg_salida"></textarea>
           <div class="div_btns">
             <input type="button" class="btn" id="btn_copiar" value="COPIAR" onclick="copiarTexto()">
-            <input type="button" class="btn" id="btn_limpiar" value="LIMPIAR" onclick="limparTexto()">
+            <input type="button" class="btn" id="btn_limpiar" value="LIMPIAR" onclick="limpiarTexto()">
           </div>
         </div>
       </section>
     </main>
-  
+    </section>
     <footer>
       <p>Desarrollado por Lucas Mierez</p>
+      
     </footer>
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      </script>
+      <script src="script.js"></script>
   </body>
 </html>
