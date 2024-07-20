@@ -1,5 +1,16 @@
 function encriptar() {
-    const input = document.getElementById("msg_entrada").value;
+    const input = document.getElementById("msg_entrada").value.trim();
+    if (input === '') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No hay texto para encriptar!',
+        showConfirmButton: true
+      });
+      
+      return;
+    }
+
     const output = input
         .replace(/e/g, "enter")
         .replace(/i/g, "imes")
@@ -60,7 +71,7 @@ function validarEntrada() {
 
   if (textarea.value.trim() === "") {
     btnDescript.classList.add("hidden");
-    msgSalida.value = ""; // Limpiar el textarea de salida
+    msgSalida.value = ""; 
   } else {
     btnDescript.classList.remove("hidden");
   }
@@ -68,3 +79,10 @@ function validarEntrada() {
    
   // Inicializa la visibilidad del botón cuando se carga la página
   document.addEventListener("DOMContentLoaded", validarEntrada);
+
+document.getElementById('msg_entrada').addEventListener('keydown', function(addEventListener) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    encriptar();
+  }
+});
