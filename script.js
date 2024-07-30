@@ -22,6 +22,16 @@ function encriptar() {
 
 function desencriptar() {
     const input = document.getElementById("msg_entrada").value;
+    if (input === '') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No hay texto para desencriptar!',
+        showConfirmButton: true
+      });
+      
+      return;
+    }
     const output = input
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
