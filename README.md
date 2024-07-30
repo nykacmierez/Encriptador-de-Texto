@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-El "Encriptador de Textos" es una aplicación web que permite a los usuarios encriptar y desencriptar mensajes utilizando un conjunto específico de reglas. La aplicación también proporciona funciones para copiar el texto encriptado y limpiar los campos de entrada y salida. Esta herramienta es útil para aprender y practicar técnicas básicas de encriptación y desencriptación.
+Este "Encriptador de Textos" es una aplicación web que permite a los usuarios encriptar y desencriptar mensajes utilizando un conjunto específico de reglas. La aplicación también proporciona funciones para copiar el texto encriptado y limpiar los campos de entrada y salida. Esta herramienta es útil para aprender y practicar técnicas básicas de encriptación y desencriptación. Proyecto del curso AluraLatam y Oracle.
 
 ## Tecnologías Utilizadas
 
@@ -23,15 +23,15 @@ El "Encriptador de Textos" es una aplicación web que permite a los usuarios enc
 
 ### Estructura del HTML
 
-- **`<header>`**: Contiene la barra de navegación con el logo.
+- **`<header>`**: Contiene la barra de navegación con el Home y el logo de ONE.
 - **`<main>`**: Contiene el área principal de la aplicación con los campos de entrada y salida de texto, botones para encriptar, desencriptar, copiar y limpiar.
-- **`<footer>`**: Información del desarrollador y enlaces a redes sociales.
+- **`<footer>`**: Información sobre el creador de la pagina y enlaces a mis redes sociales.
 
 ### Funciones JavaScript
 
-- **`encriptar()`**: Reemplaza caracteres específicos en el texto de entrada con sus correspondientes encriptados.
-- **`desencriptar()`**: Reemplaza las cadenas encriptadas en el texto de entrada con los caracteres originales.
-- **`copiarTexto()`**: Copia el texto encriptado al portapapeles y muestra una notificación de éxito o error.
+- **`encriptar()`**: Reemplaza caracteres específicos en el texto de entrada con sus correspondientes encriptados. Si no hay texto en el campo tira una alerta de error.
+- **`desencriptar()`**: Reemplaza las cadenas encriptadas en el texto de entrada con los caracteres originales. Si no hay texto en el campo tira una alerta de error.
+- **`copiarTexto()`**: Copia el texto encriptado al portapapeles y muestra una notificación de éxito o error en el caso que no haya texto que copiar. 
 - **`limpiarTexto()`**: Limpia los campos de entrada y salida de texto y muestra una notificación de éxito.
 - **`validarEntrada()`**: Habilita o deshabilita el botón de desencriptar basado en la presencia de texto en el área de entrada.
 
@@ -58,12 +58,12 @@ El "Encriptador de Textos" es una aplicación web que permite a los usuarios enc
 
 ## Contribuciones
   Las contribuciones al proyecto son bienvenidas. Sigue las siguientes instrucciones para contribuir:
-  - 1. *Fork* del repositorio.
-  - 2. *Crea* una nueva rama para tu caracteristica o correccion de errores.
-  - 3. Haz *commit* de tus cambios y realiza un *Pull Request*
+   1. *Fork* del repositorio.
+   2. *Crea* una nueva rama para tu caracteristica o correccion de errores.
+   3. Haz *commit* de tus cambios y realiza un *Pull Request*
 
 ## Licencia
-  Todos los derechos reservados.
+  Todos los derechos reservados a Lucas Ivan Mierez.
 
 ## Contacto
   Desarrollado por [Lucas Mierez](mailto:lukassmierez@gmail.com). Puedes encontrarme en [GitHub](https://github.com/nykacmierez) y [LinkedIn](https://www.linkedin.com/in/lucas-mierez-871249283/).
