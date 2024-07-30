@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background: fixed;
-    background-image: url(/assest/background.jpeg);
+    background-image: url(../assest/background.jpeg);
     background-size: cover;
     background-position: center;
     color: var(--text-color);
