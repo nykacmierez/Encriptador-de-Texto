@@ -202,7 +202,7 @@ footer {
 
     .contenedor_der,
     .contenedor_izq {
-        margin: 0 4rem; 
+        margin: 0 4rem;
     }
 
     section {
@@ -263,7 +263,7 @@ footer {
 
     .contenedor_der,
     .contenedor_izq {
-        margin: 0 1rem; /* Ajusta el margen para celulares */
+        margin: 0 1rem;
     }
     
     textarea {
@@ -279,5 +279,12 @@ footer {
     input.btn {
         width: 100%;
         margin: 0.5rem 0;
+        gap: 5;
+    }
+
+    .div_btns {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
